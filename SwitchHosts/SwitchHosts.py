@@ -41,25 +41,24 @@ def add_hosts(new_hosts):
             file_object.write("\n" + new_host)
 
     return print('\n已添加完毕!')
-#
-#
-# # 撤销刚才增加的hosts
-# def cancel_new_hosts(new_hosts):
-#     """撤销刚才增加hosts"""
-#     with open(hosts_path, 'r') as file_object:
-#         current_file_data = ''
-#
-#         for new_host in new_hosts:
-#             for line in file_object:
-#                 if line == new_host:
-#                     print('这是你要撤回的数据:' + line)
-#                 else:
-#                     current_file_data += line
-#
-#     with open(hosts_path, 'w') as file_object:
-#         file_object.write(current_file_data)
-#
-#     return print('\n撤销成功!')
+
+
+# 撤销刚才增加的hosts
+def cancel_new_hosts(new_hosts):
+    """撤销刚才增加hosts"""
+    current_file_data = ''
+    with open(hosts_path, 'r') as file_object:
+        for new_host in new_hosts:
+            for line in file_object:
+                if line == new_host:
+                    print('这是你要撤回的数据:' + line)
+                else:
+                    current_file_data += line
+
+    with open(hosts_path, 'w') as file_object:
+        file_object.write(current_file_data)
+
+    return print('\n撤销成功!')
 
 
 # 控制台
