@@ -43,7 +43,7 @@ def add_hosts(new_hosts):
     return print('\n已添加完毕!')
 
 
-# 撤销刚才增加的hosts
+# 撤销刚才增加的hosts,此功能暂未完善，有Bug，暂时未放到控制台中
 def cancel_new_hosts(new_hosts):
     """撤销刚才增加hosts"""
     current_file_data = ''
@@ -101,6 +101,7 @@ def main():
 
                 if add_question == 'y':
                     show_all_hosts()
+                    # cancel_new_hosts(new_hosts)
                 else:
                     continue
 
