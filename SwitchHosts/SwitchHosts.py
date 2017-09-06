@@ -63,7 +63,6 @@ def cancel_new_hosts(new_hosts):
 
 # 控制台
 def main():
-
     active = True
 
     while active:
@@ -105,7 +104,6 @@ def main():
                 else:
                     continue
 
-if __name__ == main():
 
+if __name__=='__main__':
     main()
-
